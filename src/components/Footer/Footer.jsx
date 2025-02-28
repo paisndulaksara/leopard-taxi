@@ -82,14 +82,14 @@ function Footer() {
               className="flex items-center gap-2 mb-2 hover:opacity-80"
             >
               <FaPhone className="text-[var(--primary-color)]" />
-              <span>800-5-800</span>
+              <span>000-0-000</span>
             </a>
             <a
               href="mailto:gettaxi@taxipark.co.uk"
               className="flex items-center gap-2 mb-2 hover:opacity-80"
             >
               <FaEnvelope className="text-[var(--primary-color)]" />
-              <span>gettaxi@taxipark.co.uk</span>
+              <span>text@text.co</span>
             </a>
           </div>
 

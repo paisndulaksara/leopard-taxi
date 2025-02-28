@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { HashLink } from "react-router-hash-link";
-import logo from "../../images/logo-inner.png";
+import logo from "../../images/LOGO.png";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,8 +25,8 @@ const Header = () => {
       <div className="xl7-container flex items-center justify-between py-4">
         {/* LOGO */}
         <div className="flex items-center">
-          <img src={logo} alt="Taxi Logo" className="h-10 w-auto object-contain" />
-          <span className="ml-2 text-xl font-bold text-white">Taxi App</span>
+          <img src={logo} alt="Taxi Logo" className="h-16 w-auto object-contain" />
+         
         </div>
         {/* DESKTOP NAV */}
         <nav className="hidden md:flex gap-6 font-semibold">
