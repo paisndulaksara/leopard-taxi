@@ -1,0 +1,128 @@
+@import "tailwindcss";
+ 
+
+/* 2. Optional: define CSS variables for your custom colors */
+:root {
+  --primary-color: #f7c81f;
+  --secondary-color: #1f1f1f;
+  --trinary-color: #f5f5f5;
+  --fourth-color: #040303;
+  --fifth-color: #0c0c0c;
+
+  --container-3xs: 16rem;
+  --container-2xs: 18rem;
+  --container-xs: 20rem;
+  --container-sm: 24rem;
+  --container-md: 28rem;
+  --container-lg: 32rem;
+  --container-xl: 36rem;
+  --container-2xl: 42rem;
+  --container-3xl: 48rem;
+  --container-4xl: 56rem;
+  --container-5xl: 64rem;
+  --container-6xl: 72rem;
+  --container-7xl: 80rem;
+}
+
+ 
+.phone-container {
+  max-width: var(--container-sm); /* maybe 24rem for phone size */
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.tablet-container {
+  max-width: var(--container-md); /* 28rem or so */
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.desktop-container {
+  max-width: var(--container-xl); /* 36rem or so */
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* If you want that 7xl container specifically for large desktops: */
+.xl7-container {
+  max-width: var(--container-7xl); /* 80rem */
+  margin: 0 auto;
+  padding: 1rem 1rem;
+}
+
+
+/* 3. Your custom font classes - Open Sans */
+.open-sans-li {
+  font-family: "Open Sans", serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.open-sans-a {
+  font-family: "Open Sans", serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.open-sans-h5 {
+  font-family: "Open Sans", serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.open-sans-p {
+  font-family: "Open Sans", serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.open-sans-span {
+  font-family: "Open Sans", serif;
+  font-weight: 700;
+  font-size: 38px;
+}
+
+/* 4. Your custom font classes - Fira Sans Condensed */
+.fira-sans-condensed-h3 {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+}
+
+.fira-sans-condensed-h3-sm {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.fira-sans-condensed-h2 {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 500;
+  font-size: 48px;
+}
+
+.fira-sans-condensed-h4 {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.fira-sans-condensed-a {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+
+@keyframes zoomOut {
+  from {
+    transform: scale(1.25);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.zoom-out {
+  animation: zoomOut 7s ease-out forwards;
+}
