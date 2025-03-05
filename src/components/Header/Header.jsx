@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { HashLink } from "react-router-hash-link";
 import logo from "../../images/LOGO.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -62,6 +63,9 @@ const Header = () => {
             Book a Taxi
             <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[var(--primary-color)] group-hover:w-full transition-all duration-300" />
           </HashLink>
+          <Link to="/packages" className="relative group text-white py-1 transition-colors duration-300 hover:text-[var(--primary-color)]"> Packages 
+          <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[var(--primary-color)] group-hover:w-full transition-all duration-300" />
+          </Link>
         </nav>
         {/* MOBILE NAV */}
         <button
@@ -84,7 +88,7 @@ const Header = () => {
           <HashLink smooth to="/#home" className="py-2 text-white hover:text-[var(--primary-color)] transition-colors" onClick={() => setIsOpen(false)}>Home</HashLink>
           <HashLink smooth to="/#aboutus" className="py-2 text-white hover:text-[var(--primary-color)] transition-colors" onClick={() => setIsOpen(false)}>About Us</HashLink>
           <HashLink smooth to="/#contactus" className="py-2 text-white hover:text-[var(--primary-color)] transition-colors" onClick={() => setIsOpen(false)}>Contact Us</HashLink>
-          <HashLink smooth to="/#book" className="py-2 text-white hover:text-[var(--primary-color)] transition-colors" onClick={() => setIsOpen(false)}>Book a Taxi</HashLink>
+          <Link smooth to="/packages" className="py-2 text-white hover:text-[var(--primary-color)] transition-colors" onClick={() => setIsOpen(false)}>Packages</Link>
         </nav>
       </div>
       {/* Animated border element */}
