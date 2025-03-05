@@ -6,6 +6,7 @@ import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
 import ContactUs from "./pages/Contactus/Contactus"; // Make sure this page exists
 import Packages from "./pages/Packages/Packages";
+import BookTaxi from "./pages/BookTaxi/BookTaxi";
 
 function App() {
   return (
@@ -14,8 +15,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<ContactUs />} />
-        <Route path="/packages" element={<Packages />}/>
-        {/* You can add more routes here, e.g. /about, /book, etc. */}
+        <Route path="/packages" element={<Packages />}/> 
+        <Route path="/book-a-taxi" element={<BookTaxi />} />
       </Routes>
       <Footer />
     </Router>

@@ -47,25 +47,27 @@ const Header = () => {
             About Us
             <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[var(--primary-color)] group-hover:w-full transition-all duration-300" />
           </HashLink>
-          <HashLink
-            smooth
-            to="/#contactus"
-            className="relative group text-white py-1 transition-colors duration-300 hover:text-[var(--primary-color)]"
-          >
-            Contact Us
-            <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[var(--primary-color)] group-hover:w-full transition-all duration-300" />
-          </HashLink>
-          <HashLink
-            smooth
-            to="/#book"
-            className="relative group text-white py-1 transition-colors duration-300 hover:text-[var(--primary-color)]"
-          >
-            Book a Taxi
-            <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[var(--primary-color)] group-hover:w-full transition-all duration-300" />
-          </HashLink>
+        
+         
           <Link to="/packages" className="relative group text-white py-1 transition-colors duration-300 hover:text-[var(--primary-color)]"> Packages 
           <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[var(--primary-color)] group-hover:w-full transition-all duration-300" />
           </Link>
+          <HashLink
+          smooth
+          to="/book-a-taxi"
+          className="relative group text-white py-1 transition-colors duration-300 hover:text-[var(--primary-color)]"
+        >
+          Book a Taxi
+          <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[var(--primary-color)] group-hover:w-full transition-all duration-300" />
+        </HashLink>
+          <HashLink
+          smooth
+          to="/#contactus"
+          className="relative group text-white py-1 transition-colors duration-300 hover:text-[var(--primary-color)]"
+        >
+          Contact Us
+          <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[var(--primary-color)] group-hover:w-full transition-all duration-300" />
+        </HashLink>
         </nav>
         {/* MOBILE NAV */}
         <button

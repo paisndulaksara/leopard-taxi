@@ -92,7 +92,7 @@ const BookTaxiForm = () => {
 
   return (
     // Remove custom container class; use max-w-2xl and w-full for consistency
-    <div className="my-12 max-w-2xl mx-auto w-full">
+    <div className="py-12 max-w-2xl mx-auto w-full">
       <div className="bg-white shadow-xl rounded-lg p-8 w-full">
         <StepIndicator currentStep={step} />
         {step === 1 && (
