@@ -1,5 +1,4 @@
-
-
+import { motion } from "framer-motion";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 import { BorderlessButton } from "../../components/Buttons/HomeBtn";
 
@@ -9,29 +8,50 @@ const ContactUs = () => {
       {/* Contact Section */}
       <section className="py-12 bg-white">
         <div className="xl7-container grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Left Column */}
-          <div className="space-y-6">
+          {/* Left Column: Contact Details */}
+          <motion.div
+            className="space-y-6"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6 }}
+          >
             <h2 className="fira-sans-condensed-h2 text-[var(--primary-color)] uppercase">
               Connect with us
             </h2>
-            <p className="open-sans-p  ">
+            <p className="open-sans-p">
               Nam eu mi eget velit vulputate tempor gravida quis massa. In malesuada condimentum ultrices. Sed et mauris a purus fermentum elementum. Sed tristique semper enim, et gravida orci iaculis et. Nulla facilisi.
             </p>
 
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <FaPhone className="text-[var(--primary-color)] text-xl" />
-                <span className="fira-sans-condensed-a text-gray-800">800-5-800</span>
+                <a
+                  href="tel:8005800"
+                  className="fira-sans-condensed-a text-gray-800 hover:underline"
+                >
+                  800-5-800
+                </a>
               </div>
               <div className="flex items-center gap-3">
                 <FaEnvelope className="text-[var(--primary-color)] text-xl" />
-                <span className="fira-sans-condensed-a text-gray-800">gettaxipark</span>
+                <a
+                  href="mailto:gettaxipark@taxipark.com"
+                  className="fira-sans-condensed-a text-gray-800 hover:underline"
+                >
+                  gettaxipark
+                </a>
               </div>
               <div className="flex items-center gap-3">
                 <FaMapMarkerAlt className="text-[var(--primary-color)] text-xl" />
-                <span className="fira-sans-condensed-a text-gray-800">
+                <a
+                  href="https://www.google.com/maps?q=43+2nd+Avenue,+New+York,+29004-7153"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="fira-sans-condensed-a text-gray-800 hover:underline"
+                >
                   43 2-nd Avenue, New York, 29004-7153
-                </span>
+                </a>
               </div>
             </div>
 
@@ -47,10 +67,16 @@ const ContactUs = () => {
                 <FaInstagram />
               </a>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column: Contact Form */}
-          <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+          <motion.div
+            className="bg-gray-100 p-6 rounded-lg shadow-md"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6 }}
+          >
             <h3 className="fira-sans-condensed-h3-sm uppercase text-[var(--primary-color)] mb-4">
               Connect with us
             </h3>
@@ -85,7 +111,7 @@ const ContactUs = () => {
                 </BorderlessButton>
               </div>
             </form>
-          </div>
+          </motion.div>
         </div>
       </section>
 

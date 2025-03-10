@@ -1,7 +1,6 @@
+import { motion } from "framer-motion";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 import { FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
-
-// Example image for the bottom bar
 import footerCar from "../../images/footer-car.png";
 
 function Footer() {
@@ -92,22 +91,23 @@ function Footer() {
               <span>text@text.co</span>
             </a>
           </div>
-
         </div>
       </div>
 
       {/* BOTTOM BAR */}
-      <div className="relative bg-[var(--fifth-color)] ">
+      <div className="relative bg-[var(--fifth-color)]">
         <div className="xl7-container flex items-center justify-between text-white">
           <div>
             2025 © All Rights Reserved - 3DHD
           </div>
         </div>
         {/* Footer image positioned absolutely at the bottom right */}
-        <img
+        <motion.img
           src={footerCar}
           alt="Footer Car"
-          className="absolute right-50 bottom-0"
+          className="absolute right-50 bottom-0 cursor-pointer"
+          whileTap={{ scale: 0.9, rotate: -10 }}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         />
       </div>
     </footer>

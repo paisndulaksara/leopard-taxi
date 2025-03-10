@@ -1,5 +1,5 @@
-import { useState } from "react"; 
-import PropTypes from 'prop-types';
+import { useState } from "react";
+import PropTypes from "prop-types";
 import {
   FaCar,
   FaTruck,
@@ -9,12 +9,16 @@ import {
 } from "react-icons/fa";
 import { BorderlessButton } from "../../components/Buttons/HomeBtn";
 
+// Updated StepIndicator component
 function StepIndicator({ currentStep }) {
   const steps = [1, 2, 3, 4];
+
   return (
-    <div className="flex items-center justify-between mb-8">
+    <div className="flex justify-center mb-8">
+    <div className="flex items-center w-full max-w-lg">
       {steps.map((step, index) => (
-        <div key={step} className="relative flex-1 flex items-center">
+        <div key={step} className="flex items-center">
+          {/* Step Circle */}
           <div
             className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold transition-all duration-300 ${
               currentStep >= step
@@ -24,8 +28,9 @@ function StepIndicator({ currentStep }) {
           >
             {step}
           </div>
+          {/* Connecting Line: Fixed width container so the animation is visible */}
           {index !== steps.length - 1 && (
-            <div className="flex-1 h-1 bg-gray-300 mx-2">
+            <div className="relative mx-2" style={{ width: "4rem", height: "0.25rem" }}>
               <div
                 className={`h-full bg-[var(--primary-color)] transition-all duration-300 ${
                   currentStep > step ? "w-full" : "w-0"
@@ -36,6 +41,7 @@ function StepIndicator({ currentStep }) {
         </div>
       ))}
     </div>
+  </div>
   );
 }
 
@@ -91,10 +97,14 @@ const BookTaxiForm = () => {
   };
 
   return (
-    // Remove custom container class; use max-w-2xl and w-full for consistency
+    // Fixed container for consistency
     <div className="py-12 max-w-2xl mx-auto w-full">
       <div className="bg-white shadow-xl rounded-lg p-8 w-full">
-        <StepIndicator currentStep={step} />
+        {/* Centered StepIndicator */}
+        <div className="flex justify-center">
+          <StepIndicator currentStep={step} />
+        </div>
+
         {step === 1 && (
           <div className="w-full">
             <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">
