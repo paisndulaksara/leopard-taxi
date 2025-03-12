@@ -137,3 +137,17 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+
+@media (max-width: 767px) {
+  .mobile-native-appearance {
+    -webkit-appearance: initial !important;
+    appearance: initial !important;
+  }
+}
+
+/* Hide the default calendar/clock icons in Chrome, Safari, etc. */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
+}

@@ -6,6 +6,8 @@ import {
   FaBus,
   FaCarSide,
   FaUser,
+  FaCalendarAlt,
+  FaClock,
 } from "react-icons/fa";
 import { BorderlessButton } from "../../components/Buttons/HomeBtn";
 
@@ -15,33 +17,31 @@ function StepIndicator({ currentStep }) {
 
   return (
     <div className="flex justify-center mb-8">
-    <div className="flex items-center w-full max-w-lg">
-      {steps.map((step, index) => (
-        <div key={step} className="flex items-center">
-          {/* Step Circle */}
-          <div
-            className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold transition-all duration-300 ${
-              currentStep >= step
-                ? "bg-[var(--primary-color)] shadow-lg"
-                : "bg-gray-300"
-            }`}
-          >
-            {step}
-          </div>
-          {/* Connecting Line: Fixed width container so the animation is visible */}
-          {index !== steps.length - 1 && (
-            <div className="relative mx-2" style={{ width: "4rem", height: "0.25rem" }}>
-              <div
-                className={`h-full bg-[var(--primary-color)] transition-all duration-300 ${
-                  currentStep > step ? "w-full" : "w-0"
+      <div className="flex items-center w-full max-w-lg">
+        {steps.map((step, index) => (
+          <div key={step} className="flex items-center">
+            {/* Step Circle */}
+            <div
+              className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold transition-all duration-300 ${currentStep >= step
+                  ? "bg-[var(--primary-color)] shadow-lg"
+                  : "bg-gray-300"
                 }`}
-              ></div>
+            >
+              {step}
             </div>
-          )}
-        </div>
-      ))}
+            {/* Connecting Line: Fixed width container so the animation is visible */}
+            {index !== steps.length - 1 && (
+              <div className="relative mx-2" style={{ width: "4rem", height: "0.25rem" }}>
+                <div
+                  className={`h-full bg-[var(--primary-color)] transition-all duration-300 ${currentStep > step ? "w-full" : "w-0"
+                    }`}
+                ></div>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
-  </div>
   );
 }
 
@@ -127,20 +127,30 @@ const BookTaxiForm = () => {
                 placeholder="Dropoff Location"
                 className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]"
               />
-              <input
-                type="date"
-                name="pickupDate"
-                value={formData.pickupDate}
-                onChange={handleChange}
-                className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]"
-              />
-              <input
-                type="time"
-                name="pickupTime"
-                value={formData.pickupTime}
-                onChange={handleChange}
-                className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]"
-              />
+              {/* Pickup Date */}
+              <div className="relative">
+                <input
+                  type="date"
+                  name="pickupDate"
+                  value={formData.pickupDate}
+                  onChange={handleChange}
+                  className="p-3 pr-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] w-full mobile-native-appearance"
+                />
+                <FaCalendarAlt className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none z-10" />
+              </div>
+
+              {/* Pickup Time */}
+              <div className="relative">
+                <input
+                  type="time"
+                  name="pickupTime"
+                  value={formData.pickupTime}
+                  onChange={handleChange}
+                  className="p-3 pr-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] w-full mobile-native-appearance"
+                />
+                <FaClock className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none z-10" />
+              </div>
+
               <div className="col-span-1 md:col-span-2">
                 <label className="block mb-2 text-gray-700 font-medium">
                   Passenger Count
