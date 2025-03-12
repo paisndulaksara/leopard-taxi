@@ -98,7 +98,7 @@ const BookTaxiForm = () => {
 
   return (
     // Fixed container for consistency
-    <div className="py-12 max-w-2xl mx-auto w-full">
+    <div className="py-12 max-w-2xl mx-auto w-full px-2">
       <div className="bg-white shadow-xl rounded-lg p-8 w-full">
         {/* Centered StepIndicator */}
         <div className="flex justify-center">

@@ -65,7 +65,7 @@ function Home() {
       <div className="relative">
         <HeroSlider />
         <div className="absolute inset-0 flex items-center max-w-[56rem]">
-          <div className="  w-full mx-auto pl-8">
+          <div className="  w-full mx-auto lg:pl-8 ">
             <BookTaxiForm />
           </div>
         </div>
