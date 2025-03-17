@@ -1,13 +1,14 @@
-import React, { useState } from "react"; 
+import React, { useState,useRef } from "react"; 
 import colomboImg from "../../images/colombo.jpg";
 import ellaImg from "../../images/ella.jpg";
 import sigiriyaImg from "../../images/sigiriya.jpg";
 import tariff2 from "../../images/tariff-2.png";
 import tariff3 from "../../images/tariff-3.png";
-import tariff4 from "../../images/tariff-4.png";
+import tariff4 from "../../images/tariff-4.png"; 
 
 // Import your button components
 import { BorderedButton } from "../../components/Buttons/HomeBtn";
+import { AiOutlineCalendar, AiOutlineClockCircle } from "react-icons/ai";
 
 function PackageBookingPage() {
   // State for package selection, vehicle selection, date/time and contact
@@ -17,6 +18,8 @@ function PackageBookingPage() {
   const [selectedTime, setSelectedTime] = useState("");
   const [contactInfo, setContactInfo] = useState({ name: "", email: "", phone: "" });
   const [submitted, setSubmitted] = useState(false);
+  const dateInputRef = useRef(null);
+const timeInputRef = useRef(null);
 
   // Data for packages
   const packagesData = [
@@ -204,37 +207,57 @@ function PackageBookingPage() {
       )}
 
       {/* Date & Time Section – appears if a vehicle is selected */}
-      {selectedVehicle && (
-        <section className="mb-8">
-          <h2 className="text-3xl font-bold mb-4 text-center text-[var(--secondary-color)]">
-            Select Date & Time
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block mb-2 text-lg font-medium text-[var(--secondary-color)]">
-                Select Date:
-              </label>
-              <input
-                type="date"
-                value={selectedDate}
-                onChange={(e) => setSelectedDate(e.target.value)}
-                className="p-3 border rounded w-full"
-              />
-            </div>
-            <div>
-              <label className="block mb-2 text-lg font-medium text-[var(--secondary-color)]">
-                Select Time:
-              </label>
-              <input
-                type="time"
-                value={selectedTime}
-                onChange={(e) => setSelectedTime(e.target.value)}
-                className="p-3 border rounded w-full"
-              />
-            </div>
-          </div>
-        </section>
-      )}
+     
+{selectedVehicle && (
+  <section className="mb-8">
+    <h2 className="text-3xl font-bold mb-4 text-center text-[var(--secondary-color)]">
+      Select Date & Time
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+      {/* Date Input Field */}
+      <div className="relative">
+        <label className="block mb-2 text-lg font-medium text-[var(--secondary-color)]">
+          Select Date:
+        </label>
+        <div
+          className="relative cursor-pointer"
+          onClick={() => dateInputRef.current?.showPicker()} // Opens Date Picker
+        >
+          <input
+            ref={dateInputRef} // Reference to Date Input
+            type="date"
+            value={selectedDate}
+            onChange={(e) => setSelectedDate(e.target.value)}
+            className="p-3 pr-12 border rounded w-full focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] cursor-pointer"
+          />
+          <AiOutlineCalendar className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 w-6 h-6 pointer-events-none" />
+        </div>
+      </div>
+
+      {/* Time Input Field */}
+      <div className="relative">
+        <label className="block mb-2 text-lg font-medium text-[var(--secondary-color)]">
+          Select Time:
+        </label>
+        <div
+          className="relative cursor-pointer"
+          onClick={() => timeInputRef.current?.showPicker()} // Opens Time Picker
+        >
+          <input
+            ref={timeInputRef} // Reference to Time Input
+            type="time"
+            value={selectedTime}
+            onChange={(e) => setSelectedTime(e.target.value)}
+            className="p-3 pr-12 border rounded w-full focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] cursor-pointer"
+          />
+          <AiOutlineClockCircle className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 w-6 h-6 pointer-events-none" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+)}
 
       {/* Final Form Section – appears if date and time are selected */}
      {selectedDate && selectedTime && (
